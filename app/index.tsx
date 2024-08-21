@@ -1,35 +1,41 @@
-import { Text, View } from "react-native";
-
-import {StyleSheet} from 'react-native';
-
+import { Text, View, Image, StyleSheet, Button } from "react-native";
 import React from "react";
 import FlexDirectionBasics from "./components/FlexDimesions";
+import ButtonBasics from "./components/ButtonComp";
+// import { NavigationContainer } from "@react-navigation/native";
 const styles = StyleSheet.create({
-
-  container:{
-
-    marginTop:50,
+  container: {
+    marginTop: 50,
+    alignItems: 'center', // Center content horizontally
   },
-  bigBlue:{
-    color:'blue',
-    fontWeight:'bold',
-    fontSize:30,
+  bigBlue: {
+    color: '#00ffff',
+    fontWeight: 'bold',
+    fontSize: 30,
+    marginBottom: 20, // Add some space below the text
   },
-  red:{
-    color:'red',
-  }
-})
+  red: {
+    color: 'red',
+  },
+});
 
 export default function Index() {
   return (
 
-    <View>
+    <View style={styles.container}>
+      <Text style={styles.bigBlue}>React Native 👌</Text>
+      <Text style ={ styles.bigBlue}>🙈🙊🐵</Text>
+      <Image source={require('../assets/images/react-logo.png')} style={{ width: 100, height: 100 }} />
 
-      <h1>React Native 👌</h1>
-    <FlexDirectionBasics/>
+      <Button onPress={() => {
+
+        console.log("You Pressed")
+        
+      }}
+      title="Touch Me"/>
+      <ButtonBasics/>
+      {/* <FlexDirectionBasics /> */}
     </View>
+
   );
 }
-
-
-
